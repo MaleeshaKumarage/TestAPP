@@ -94,7 +94,7 @@ var output=document.getElementById("userOutput");
 
 element.addEventListener("keydown", function(event) {
   
-    if (event.keyCode === 32) {
+    if (event.keyCode === 32 || event.keyCode===13 ) {
         element.value=output.value;
     }
 });
