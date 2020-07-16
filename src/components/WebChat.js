@@ -3,6 +3,7 @@ import ReactWebChat, { createDirectLine, createStore } from 'botframework-webcha
 import STYLE_OPTIONS from './styleOptions';
 import * as CONFIG from '../config';
 import axios from 'axios';
+import MyComponent from '../mycomponent';
 
 
 export class WebChat extends Component {
@@ -57,19 +58,7 @@ export class WebChat extends Component {
         }
         
     }
-    async escFunction(event){
-        const element = document.querySelector('[aria-label="Sendbox"]');
-        console.log(element.value);
-        axios.get("https://inputtools.google.com/request?text="+element.value+"&itc=si-t-i0-und&num=5")
-      .then(function(response) {
-        console.log(response.data[1][0][1]);
-      }).catch(function(error) {
-        console.log(error);
-      })
-        
-        
-        
-    }
+    
     async componentDidMount() {
         await this.componentInit();
         
@@ -81,7 +70,9 @@ export class WebChat extends Component {
     render() {
         return (
             <div id="bot" className="col">
+                
                 {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
+                
             </div>
         );
     }
