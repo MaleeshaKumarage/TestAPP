@@ -3,7 +3,7 @@ import ReactWebChat, { createDirectLine, createStore } from 'botframework-webcha
 import STYLE_OPTIONS from './styleOptions';
 import * as CONFIG from '../config';
 import axios from 'axios';
-import MyComponent from '../mycomponent';
+
 
 
 export class WebChat extends Component {
