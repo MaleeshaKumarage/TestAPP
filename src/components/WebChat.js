@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import ReactWebChat, { createDirectLine, createStore } from 'botframework-webchat';
 import STYLE_OPTIONS from './styleOptions';
 import * as CONFIG from '../config';
-import axios from 'axios';
-
-
 
 export class WebChat extends Component {
-  
+
     constructor(props) {
         super(props);
         this.store = createStore({}, ({ dispatch }) => next => action => {
@@ -30,7 +27,7 @@ export class WebChat extends Component {
         });
         this.state = { dtoken: null, uid: null, uname: null, isSet: false };
     }
-    
+
     async componentInit() {
         try {
             var res = await fetch(`${CONFIG.API_URL}/api/init`);
@@ -56,23 +53,14 @@ export class WebChat extends Component {
         } catch (error) {
             console.log(error);
         }
-        
     }
-    
     async componentDidMount() {
         await this.componentInit();
-        
-        document.addEventListener("keyup", this.escFunction, false);
-        
     }
-
-   
     render() {
         return (
             <div id="bot" className="col">
-                
                 {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
-                
             </div>
         );
     }

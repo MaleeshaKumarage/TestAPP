@@ -23,35 +23,27 @@ export class App extends Component {
 
       <div className="row" style={{ height: "90%" }}>
         <div style={{ width: "100%" }}>
-          
+          <img className="mobileShow " id="logo" src="images/vevro_logo_min.png" alt="vevro" style={{ float: "left", maxHeight: "40px" }} />
+          <img className="mobileShow " id="buttonLogo" src="images/background.png" alt="vevro" style={{ float: "right", maxHeight: "40px" }} />
+
         </div>
         <div className="col-4 portraitHide " style={{ maxHeight: "100%" }}  >
-       
+          <div className="row">
+            <img id="logo" src="images/vevro_logo_min.png" alt="vevro" style={{ cursor: "pointer", width: "100%", marginRight: 10, maxWidth: 70, marginBottom: "5%", float: "right" }} />
+          </div>
           <div className="row " style={{ maxHeight: "100%" }}>
-         
-            <div id="slider">
-                <figure>
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867405/RestOBot/ps0fxy14tdioqp6svk28.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867405/RestOBot/ugzk2zojwt8ia05xywyw.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867404/RestOBot/vnyusgbxru12gnjikugw.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867404/RestOBot/l6ptpx6xvmscfwsaz3qb.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867403/RestOBot/ztasczqnucncmg8zg4ib.png" />
-                  
-                </figure>
-            </div>
-            <div className="col-12" style={{ position: "relative",  width: "100%", textAlign: "center", float: "center" }}>
+            <img id="logo" src="images/background.png" alt="vevro" style={{ position: "relative", top: "-100px", width: "100%", padding: '1%', float: "center" }} />
+            <div className="col-12" style={{ position: "relative", top: "-80px", width: "100%", textAlign: "center", float: "center" }}>
               <span className="lovespan ">Made with <i className="fa fa-heart pulse"></i> by <span onClick={this.onClickVevro} id="lvevro"
-                style={{ cursor: "pointer" }}>Maleesha Kumarage<sup>&copy;</sup></span></span>
+                style={{ cursor: "pointer" }}>Vevro<sup>&copy;</sup></span></span>
               <br />
-             
-            </div>
+              <a className="pulse" href="https://vevro.com/docs/VevroPrivacyPolicy.pdf" target="_blank" style={{ color: "gray", fontSize: 10 }}>Privacy&nbsp;Policy</a>
             </div>
           </div>
-        <div className={mobileChanged} style={{ maxHeight: "100%"}} >
-          <WebChat />
-          <input id="userOutput" style={{ maxHeight: "100%",width:"100%",border:"none" }}readonly></input>
         </div>
-       
+        <div className={mobileChanged} style={{ maxHeight: "100%" }} >
+          <WebChat />
+        </div>
       </div>
     );
   }
