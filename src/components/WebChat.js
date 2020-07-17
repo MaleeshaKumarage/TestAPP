@@ -42,7 +42,7 @@ export class WebChat extends Component {
                     uid = result.i;
                 }
 
-                //let directLine = new DirectLine({ token: result.dtoken });s
+                let directLine = new DirectLine({ token: result.dtoken });s
                 this.setState({
                     dtoken: result.d,
                     uid: uid,
@@ -60,7 +60,7 @@ export class WebChat extends Component {
     render() {
         return (
             <div id="bot" className="col">
-                {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
+                <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />
             </div>
         );
     }
